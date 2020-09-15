@@ -4,7 +4,7 @@
 В зависимости от назначения сборки меняется параметр `libraryTarget` на `'commonjs2'` и входной файл приложения в `entry` на `'src/node.node.js'`. 
 Опции модулей, траспиляции и прочего одинаковые. 
 
-*[`webpack.config.js`](https://github.com/ylabio/react-skeleton/blob/master/webpack.config.js)*
+*[webpack.config.js](https://github.com/ylabio/react-skeleton/blob/master/webpack.config.js)*
 ```js
 let config = {
   name: target, // "web" или "node" передаётся в параметрах запуска сборки
@@ -63,7 +63,7 @@ node ./server.js
 При желании из сборки можно исключить кроссплатформенные пакеты, указав их названия в опции вебпака `externals`. 
 Node.js будет искать тогда пакет в директории `/node_modules`. 
 
-*[`webpack.config.js`](https://github.com/ylabio/react-skeleton/blob/master/webpack.config.js)*
+*[webpack.config.js](https://github.com/ylabio/react-skeleton/blob/master/webpack.config.js)*
 ```js
 if (isNode) {
    config.externals = ['react-helmet', 'moment'];
