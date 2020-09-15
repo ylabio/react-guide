@@ -41,16 +41,16 @@ function Button(props) {
   };
   // props не разворачивается на отдельные переменные, чтобы сразу и однозначно понимать от куда берутся значения
   return (
-      <button
-        type={props.type}
-        className={themes('Button', props.theme)}
-        disabled={props.disabled}
-        title={props.title}
-        onClick={callbacks.onClick}
-      >
-        {props.children}
-      </button>
-    );
+    <button
+      type={props.type}
+      className={themes('Button', props.theme)}
+      disabled={props.disabled}
+      title={props.title}
+      onClick={callbacks.onClick}
+    >
+      {props.children}
+    </button>
+  );
 }
 
 Button.propTypes = {
