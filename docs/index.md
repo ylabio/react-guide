@@ -31,4 +31,4 @@
 - [Рендер на сервере — SSR](/docs/develop/ssr/index.md)
 
 ---
-Исходники документации [![git](/assets/github-icon_small.png){.icon}](https://github.com/VladimirShestakov/react-guide/tree/develop)
+Исходники документации [![git](/assets/github-icon_small.png){.icon}](https://github.com/ylabio/react-guide)
