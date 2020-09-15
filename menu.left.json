@@ -1,0 +1,111 @@
+{
+  "title": "React Skeleton",
+  "key": 1,
+  "url": "/",
+  "children": [
+    {
+      "title": "Установка",
+      "type": "group",
+      "key": 2,
+      "children": [
+        {
+          "title": "Новый проект",
+          "url": "/docs/installation/new-project.md",
+          "key": 3
+        },
+        {
+          "title": "Сборка",
+          "url": "/docs/installation/build.md",
+          "key": 32
+        },
+        {
+          "title": "Настройка",
+          "url": "/docs/installation/settings.md",
+          "key": 31
+        }
+      ]
+    },
+    {
+      "title": "Чек-лист",
+      "type": "group",
+      "key": 4,
+      "children": [
+        {
+          "title": "Репозиторий",
+          "url": "/docs/check/git.md"
+        },
+        {
+          "title": "Вёрстка",
+          "url": "/docs/check/html.md"
+        },
+        {
+          "title": "Компоненты",
+          "url": "/docs/check/component.md"
+        },
+        {
+          "title": "Контейнеры",
+          "url": "/docs/check/container.md"
+        },
+        {
+          "title": "Роутинг",
+          "url": "/docs/check/router.md"
+        },
+        {
+          "title": "Логика приложения",
+          "url": "/docs/check/logic.md"
+        },
+        {
+          "title": "Состояние и экшены",
+          "url": "/docs/check/state.md"
+        },
+        {
+          "title": "Интеграция API",
+          "url": "/docs/check/api.md"
+        },
+        {
+          "title": "Стиль кода",
+          "url": "/docs/check/source.md"
+        }
+      ]
+    },
+    {
+      "title": "Разработка",
+      "type": "group",
+      "key": 5,
+      "children": [
+        {
+          "title": "Структура проекта",
+          "key": 51,
+          "url": "/docs/develop/structure.md"
+        },
+        {
+          "title": "Рендер на сервере — SSR",
+          "key": 52,
+          "url": "/docs/develop/ssr/index.md",
+          "children": [
+            {
+              "title": "Требования",
+              "key": 521,
+              "url": "/docs/develop/ssr/requirements.md"
+            },
+            {
+              "title": "Сборка и запуск",
+              "key": 522,
+              "url": "/docs/develop/ssr/build.md"
+            },
+            {
+              "title": "Сервер",
+              "key": 523,
+              "url": "/docs/develop/ssr/server.md"
+            },
+            {
+              "title": "Рендер",
+              "key": 524,
+              "url": "/docs/develop/ssr/render.md"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
