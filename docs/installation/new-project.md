@@ -44,6 +44,8 @@ npm start
 ```
 
 Приложение по умолчанию доступно по адресу `http://localhost:8031`. Порт меняется в файле конфигурации `src/config.js` и может отличаться от указанного.
+
+*[`/src/config.js`](https://github.com/ylabio/react-skeleton/blob/master/src/config.js)*
 ```javascript
 let config = {
  dev: {

@@ -20,7 +20,6 @@
 `./dist/web`, а если url не на существующий файл, то отдавать файл `./dist/web/index.html`.
 
 *Пример настройки Nginx*
-
 ```
 server {
     listen 80;
@@ -59,16 +58,16 @@ server {
 ```
 
 Для постоянной работы приложения рендера воспользуйтесь менеджером процессов [pm2](https://pm2.keymetrics.io/docs/usage/pm2-doc-single-page/). Запуск из корневой директории приложения,
-где кроме папки со сборками нужен файл [`process.json`](https://github.com/ylabio/react-skeleton/blob/master/process.json) и [`server.js`](https://github.com/ylabio/react-skeleton/blob/master/server.js)
+где кроме папки со сборками нужен файл [`/process.json`](https://github.com/ylabio/react-skeleton/blob/master/process.json) и [`/server.js`](https://github.com/ylabio/react-skeleton/blob/master/server.js)
 ```
 pm2 start process.json 
 ```
 
 ## Алиасы путей
 
-В файле [`package.json`](https://github.com/ylabio/react-skeleton/blob/master/package.json) кроме типовых свойств проекта прописаны алиасы на директории, чтобы импортировать их из любого файла через @ вместо указания относительных путей. Алиасы также поймет IDE WebStorm.
+В файле [`/package.json`](https://github.com/ylabio/react-skeleton/blob/master/package.json) кроме типовых свойств проекта прописаны алиасы на директории, чтобы импортировать их из любого файла через @ вместо указания относительных путей. Алиасы также поймет IDE WebStorm.
 
-*`package.json`*
+*[`/package.json`](https://github.com/ylabio/react-skeleton/blob/master/package.json)*
 ```
 "_moduleAliases": {
     "@api": "./src/api/",

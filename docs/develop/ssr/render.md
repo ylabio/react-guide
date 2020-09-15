@@ -4,7 +4,7 @@
 Его логика схожа с [`index.web.js`](https://github.com/ylabio/react-skeleton/blob/master/src/index.web.js). 
 Но вместо монтирования приложения к DOM узлу вызывается рендер приложения в строку функцией [`renderToString()`](https://ru.reactjs.org/docs/react-dom-server.html#rendertostring).
 
-*index.node.js*
+*[`/src/index.node.js`](https://github.com/ylabio/react-skeleton/blob/master/src/index.node.js)*
 ```js
 import { renderToString } from 'react-dom/server';
 //..
@@ -21,7 +21,7 @@ const html = renderToString(jsx);
 Особенности их исполнения на сервере определяются в конфигурации. Для api может использоваться другой базовый url, для навигации используется 
 объект истории в памяти (вместо браузерного) и передаётся начальный url из адреса запроса в `initialEntries`, чтобы рендерить запрашиваемую страницу.
 
-*index.node.js*
+*[`/src/index.node.js`](https://github.com/ylabio/react-skeleton/blob/master/src/index.node.js)*
 ```js
 import api from '@api';
 import navigation from '@app/navigation';
@@ -45,7 +45,7 @@ store.configure();
 и при серверном рендере. Более того, этот хук на сервере добавляет промис асинхронной функции в массив `global.SSR.initPromises[]`.
 Можно дождаться завершения всех промисов и выполнить рендер с уже полноценным состоянием и получить html с содержимым.
 
-*index.node.js*
+*[`/src/index.node.js`](https://github.com/ylabio/react-skeleton/blob/master/src/index.node.js)*
 ```js
 (async () => {
   //..
@@ -84,11 +84,11 @@ store.configure();
 ## Метаданные, скрипты, стили
 
 Последняя задача - вставить рендер приложения в шаблон html документа, а также прописать в шаблоне скрипты, стили и метаданные.
-В качестве шаблона используется файла `/src/index.html`, в нём нет специальной разметки для шаблонизатора. Этот валидный
-html файл, который используется и для сборки фронтенд. Для вставки в него данных используется функция `@utils/insert-text` 
+В качестве шаблона используется файла [`/src/index.html`](https://github.com/ylabio/react-skeleton/blob/master/src/index.html), в нём нет специальной разметки для шаблонизатора. Этот валидный
+html файл, который используется и для сборки фронтенд. Для вставки в него данных используется функция [`@utils/insert-text()`](https://github.com/ylabio/react-skeleton/blob/master/src/utils/insert-text.js) 
 для поиска тега и вставки строки перед или после него.
 
-*index.node.js*
+*[`/src/index.node.js`](https://github.com/ylabio/react-skeleton/blob/master/src/index.node.js)*
 ```js
 import { parentPort, workerData } from 'worker_threads';
 import insertText from '@utils/insert-text';
@@ -108,7 +108,7 @@ parentPort.postMessage({ out, state, status: 200 });
 Заголовок `<title>`, описание `<description>`, ключевые слова и другие мета теги `<meta>` определяются библиотекой [react-helmet](https://github.com/nfl/react-helmet#readme). 
 Она используется в разметке jsx для динамической установки тегов в `<head>`. 
 
-*index.node.js*
+*[`/src/index.node.js`](https://github.com/ylabio/react-skeleton/blob/master/src/index.node.js)*
 ```js
 import { Helmet } from 'react-helmet';
 //...
@@ -125,7 +125,7 @@ const linkTags = helmetData.link.toString();
 рендере в строку. При сборке приложения формируется файл с метаданными про сборку `/dist/node/loadable-stats.json`, 
 руководствуясь этому файлу, библиотека узнает, какие скрипты и стили соответствуют текущему рендеру. Они вставляются в html.
 
-*index.node.js*
+*[`/src/index.node.js`](https://github.com/ylabio/react-skeleton/blob/master/src/index.node.js)*
 ```js
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server';
 //...
@@ -145,16 +145,17 @@ const styleTags = extractor.getStyleTags();
 ## Особенности фронта
 
 Чтобы серверный рендер корректно воспринимался на клиенте (в браузере) и react лишний раз не пересоздавал DOM, 
-монтирование приложения выполняется функцией `ReactDOM.hydrate()`. С отключенным SSR применяется `ReactDOM.render()`. 
-Если существует свойство `window.stateKey`, значит страница рендерилась на сервере. Клиент запрашивает объект состояния, 
-инициализирует с ним redux хранилище и только после выполняет монтирование.
+монтирование приложения выполняется функцией `ReactDOM.hydrate()`. С неактивным SSR используется функция `ReactDOM.render()`. 
+Если существует свойство `window.stateKey`, значит страница рендерилась на сервере. Тогда клиент запрашивает объект состояния, 
+инициализирует с ним redux хранилище, и только после этого выполняет монтирование.
 
-*index.**web**.js*
+*[`/src/index.web.js`](https://github.com/ylabio/react-skeleton/blob/master/src/index.web.js)*
 ```js
+let preloadedState = {};
 // Если есть stateKey, то включен режим серверного рендера
 if (window.stateKey) {
-SSR.active = true;
-SSR.firstRender = true;
+  SSR.active = true;
+  SSR.firstRender = true;
   // Получаем всё состояние, с которым рендерился html по stateKey, ещё используется stateSecret в куках
   preloadedState = (await ssrApi.getInitState({ key: window.stateKey })).data;
   reactRender = ReactDOM.hydrate;
@@ -179,7 +180,7 @@ reactRender(
 в рамках SPA приложения (без полной перезагрузки) их хук `useInit()` срабатывал. После первого рендера приложение 
 на клиенте работает без артефактов SSR.
 
-*/src/app/index.js*
+*[`/src/app/index.js`](https://github.com/ylabio/react-skeleton/blob/master/src/app/index.js)*
 ```js
 // Корневой компонент приложения
 function App() {
@@ -198,8 +199,9 @@ function App() {
 Некоторые страницы или фрагменты страниц не надо рендерить на сервере. Например, личный кабинет недоступен поисковикам 
 из-за авторизации, и нет никакого смысла его рендерить на сервере. В компоненте можно написать простое условие, 
 если приложение запущено на Node.js, то вернуть пустой тег, если в вебе, то полноценную вёрстку. Клиент получит от 
-сервера пустую вёрстку, но актуализиурет её уже при первом рендере.
+сервера пустую вёрстку, но актуализирует её уже при первом рендере.
 
+*Пример рендера только на клиенте*
 ```js
 function Component(){
   if (process.env.IS_NODE) {
@@ -214,16 +216,11 @@ function Component(){
 рендере необходимо передать в него четвертый параметр `force` равный `true`. Тогда хук будет работать и при первом рендере.
 В итоге, хук useInit() не работает при первом рендере только если был серверный рендер и не форсируется его запуск четвертым аргументом.
 
+*Пример `useInit()`*
 ```js
 useInit(async () => {
-  // Вызывается даже если есть сессиия в целях её акутализации
-  // Вызов происходит при переходе в роут с друго пути
+  // Вызывается даже если есть сессиия в целях её актуализации
+  // Вызов происходит при переходе в роут с другого пути
   await sessionActions.remind();
 }, [], false, true); // true для форсирования хука при SSR
 ```
-
-
-
-
-
-

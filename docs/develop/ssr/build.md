@@ -1,10 +1,10 @@
 # Сборка и запуск SSR
 
-Для серверного рендера создаётся своя сборка. Используется общий файл настроек [`webpack.config.js`](https://github.com/ylabio/react-skeleton/blob/master/webpack.config.js). 
-В зависимости от назначения сборки меняется параметр `libraryTarget` на `'commonjs2'` и входной файл приложения в `entry` на `'src/node.node.js'`. 
+Для серверного рендера создаётся своя сборка. Используется общий файл настроек [`/webpack.config.js`](https://github.com/ylabio/react-skeleton/blob/master/webpack.config.js). 
+В зависимости от назначения сборки меняется параметр `libraryTarget` на `'commonjs2'` и входной файл приложения в `entry` на `'index.node.js'`. 
 Опции модулей, траспиляции и прочего одинаковые. 
 
-*[webpack.config.js](https://github.com/ylabio/react-skeleton/blob/master/webpack.config.js)*
+*[`/webpack.config.js`](https://github.com/ylabio/react-skeleton/blob/master/webpack.config.js)*
 ```js
 let config = {
   name: target, // "web" или "node" передаётся в параметрах запуска сборки
@@ -50,7 +50,7 @@ npm run build:all
 ```
 
 На продакшен сервере пересобирать приложение не надо, остаётся только запустить. Поэтому npm команда start не подойдет (так как делает сборку),
-лучше напрямую запустить Node.js с файлом [/server.js](https://github.com/ylabio/react-skeleton/blob/master/server.js). Этот файл не попадает в сборку, не является частью фронтенд приложения, 
+лучше напрямую запустить Node.js с файлом [`/server.js`](https://github.com/ylabio/react-skeleton/blob/master/server.js). Этот файл не попадает в сборку, не является частью фронтенд приложения, 
 а содержит логику http сервера и сам запускает сборку фронта под Node.js для обработки запросов.
 ```
 node ./server.js
@@ -63,7 +63,7 @@ node ./server.js
 При желании из сборки можно исключить кроссплатформенные пакеты, указав их названия в опции вебпака `externals`. 
 Node.js будет искать тогда пакет в директории `/node_modules`. 
 
-*[webpack.config.js](https://github.com/ylabio/react-skeleton/blob/master/webpack.config.js)*
+*[`/webpack.config.js`](https://github.com/ylabio/react-skeleton/blob/master/webpack.config.js)*
 ```js
 if (isNode) {
    config.externals = ['react-helmet', 'moment'];

@@ -7,7 +7,7 @@
 и парсер куков. В куке может передаваться ключ состояния, хотя можно учитывать и токены авторизации, чтобы 
 рендерить персональные страницы.
 
-*server.js*
+[`/server.js`](https://github.com/ylabio/react-skeleton/blob/master/server.js)
 ```js
 const app = express();
 
@@ -19,7 +19,7 @@ app.use(cookieParser());
 Основная задача сервера рендера - обработать запросы к страницам сайта, отрендерить страницу фронтенд приложения и вернуть 
 html страницы в ответ на запрос. Для этого реализован общий роутер на все страницы. 
 
-*server.js*
+[`/server.js`](https://github.com/ylabio/react-skeleton/blob/master/server.js)
 ```js
 app.get('/*', async (req, res) => {
   try {
@@ -70,7 +70,7 @@ app.listen(config.ssr.port, config.ssr.host);
 > слоя апи, объекта навигации и другие - их нельзя изолировать через замыкание. Запуск через Worker позволяет сохранить 
 > привычную архитектуру фронтенда и не оглядываться на особенности SSR.
 
-*server.js*
+[`/server.js`](https://github.com/ylabio/react-skeleton/blob/master/server.js)
 ```js
 function render(params) {
   return new Promise((resolve, reject) => {
@@ -99,7 +99,7 @@ function render(params) {
 
 Чтобы сервер рендера отдавал объект состояния по запросу с ключами в адресе и в куке, реализован роутер `/ssr/state/:key`
 
-*server.js*
+[`/server.js`](https://github.com/ylabio/react-skeleton/blob/master/server.js)
 ```js
 let stateStorage = {};
 
@@ -122,7 +122,7 @@ app.get('/ssr/state/:key', async (req, res) => {
 На сервере запросы нужно проксировать к домену апи. Лучше, если запросы проксируются через Nginx, но если приложение 
 запущено локально без Nginx, то запросы будут проксироваться серверным рендером. 
 
-*server.js*
+[`/server.js`](https://github.com/ylabio/react-skeleton/blob/master/server.js)
 ```js
 // Прокси на внешний сервер по конфигу (обычно для апи)
 const proxy = httpProxy.createProxyServer({});
@@ -142,7 +142,7 @@ for (const path of Object.keys(config.api.proxy)) {
 Используется тот же конфиг путей прокси, что и вебпаком. Вебпак тоже умеет поднимать прокси сервер, но он используется 
 локально в режиме разработки без SSR. 
 
-*src/config.js*
+*[`/src/config.js`](https://github.com/ylabio/react-skeleton/blob/master/src/config.js)*
 ```js
 let config = {
   // Параметры сервера рендера
