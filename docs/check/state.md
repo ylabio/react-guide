@@ -40,3 +40,86 @@
     - Практически все действия пользователя — это смена параметров. Смена поискового поля — установка параметра, контейнеру с полем поиска при этом не надо вызывать загрузку данные, его задачу установить параметр.
     - Инициализация модуля — это загрузка данных по начальным параметрам. Именно это делается в хуке `useInit()`. При инициализации можно передать новые параметры.
 
+*Пример вызова экшенов в форме авторизации [`/src/app/login/index.js`](https://github.com/ylabio/react-skeleton/blob/master/src/app/login/index.js)*
+```js
+import formLogin from '@store/form-login/actions';
+
+function Login(props) {
+  //...
+  const callbacks = {
+    onChangeForm: useCallback(async data => {
+      // Экшен по установке данных из формы в общий стейт
+      await formLogin.change(data);
+    }, []),
+    onSubmitForm: useCallback(async data => {
+      // Отправка данных формы
+      await formLogin.submit(data);
+      //..
+    }, []),
+  };
+  // ...
+```
+
+*Экшены формы входа [`src\store\form-login\actions.js`](https://github.com/ylabio/react-skeleton/blob/master/src/store/form-login/actions.js)*
+```js
+import store from '@store';
+import * as api from '@api';
+import initState, { types } from './state.js';
+
+export default {
+  /**
+   * Изменение полей формы
+   * @param data
+   */
+  change: data => {
+    store.dispatch({type: types.SET, payload: { data }});
+  },
+
+  /**
+   * Отправка формы в АПИ
+   * @param data
+   * @returns {Promise<*>}
+   */
+  submit: async data => {
+    store.dispatch({ type: types.SET, payload: { wait: true, errors: null } });
+    try {
+      const response = await api.users.login(data);
+      //...
+      // сброс данных в форме
+      store.dispatch({ type: types.SET, payload: initState });
+      return result;
+    } catch (e) {
+      //..
+    }
+  },
+};
+```
+
+*Тип экшенов и начальное состояние [`src\store\form-login\state.js`](https://github.com/ylabio/react-skeleton/blob/master/src/store/form-login/state.js)*
+```js
+export const types = {
+  SET: Symbol('SET'),
+};
+
+export default {
+  data: {
+    login: '',
+    password: '',
+  },
+  wait: false,
+  errors: null,
+};
+```
+
+*Редьюсер [`src\store\form-login\reducer.js`](https://github.com/ylabio/react-skeleton/blob/master/src/store/form-login/reducer.js)*
+```js
+import reducer from '@utils/reducer';
+import mc from 'merge-change';
+import initState, { types } from './state.js';
+
+export default reducer(initState, {
+  [types.SET]: (state, action) => {
+    return mc.update(state, action.payload);
+  },
+});
+```
