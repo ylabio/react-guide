@@ -60,11 +60,11 @@
           "url": "/docs/check/router.md",
           "key": 46
         },
-        {
-          "title": "Логика",
-          "url": "/docs/check/logic.md",
-          "key": 47
-        },
+//        {
+//          "title": "Логика",
+//          "url": "/docs/check/logic.md",
+//          "key": 47
+//        },
         {
           "title": "Состояние и экшены",
           "url": "/docs/check/state.md",

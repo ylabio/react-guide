@@ -60,30 +60,31 @@ import CustomOption from '@components/elements/custom-option';
  */
 function SomeCompoennt(props){
 
-    // Состояние из redux
-    const select = useSelectorMap(state => ({
-       active: state.categories.active
-    }));
+  // Состояние из redux
+  const select = useSelectorMap(state => ({
+     active: state.categories.active,
+     items: state.categories.items
+  }));
 
-    // Функции обратного вызова
-    const callbacks = {
-      onClick: useCallback(()=>{...}, []),
-      onSubmit: useCallback(()=>{...}, []),
-    }
+  // Функции обратного вызова
+  const callbacks = {
+    onClick: useCallback(()=>{...}, []),
+    onSubmit: useCallback(()=>{...}, []),
+  }
 
-    // Замороженные опции
-    const options = {
-      items: useMemo(()=>{...}, [])
-    }
+  // Замороженные опции
+  const options = {
+    items: useMemo(()=>{...}, [])
+  }
 
-    // Отдельные функции рендера
-    const renders = {
-      item: useCallback((itemProps)=>(<CustomOption {...itemProps}/>), []),
-    }
+  // Отдельные функции рендера
+  const renders = {
+    item: useCallback((itemProps)=>(<CustomOption {...itemProps}/>), []),
+  }
 
-    return (
-      <select onClick={callbacks.onClick} className={themes('Select', {'disabled': props.disabled})}>
-          {options.items.map(item => (renders.item(item)))}
-      </div>
-    )
+  return (
+    <select onClick={callbacks.onClick} className={themes('Select', {'disabled': props.disabled})}>
+      {options.items.map(item => (renders.item(item)))}
+    </div>
+  )
 }
