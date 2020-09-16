@@ -32,39 +32,48 @@
       "children": [
         {
           "title": "Репозиторий",
-          "url": "/docs/check/git.md"
+          "url": "/docs/check/git.md",
+          "key": 41
         },
         {
           "title": "Вёрстка",
-          "url": "/docs/check/html.md"
+          "url": "/docs/check/html.md",
+          "key": 42
         },
         {
           "title": "Компоненты",
-          "url": "/docs/check/component.md"
+          "url": "/docs/check/component.md",
+          "key": 43
         },
         {
           "title": "Контейнеры",
-          "url": "/docs/check/container.md"
+          "url": "/docs/check/container.md",
+          "key": 44
         },
         {
           "title": "Роутинг",
-          "url": "/docs/check/router.md"
+          "url": "/docs/check/router.md",
+          "key": 45
         },
         {
           "title": "Логика приложения",
-          "url": "/docs/check/logic.md"
+          "url": "/docs/check/logic.md",
+          "key": 46
         },
         {
           "title": "Состояние и экшены",
-          "url": "/docs/check/state.md"
+          "url": "/docs/check/state.md",
+          "key": 47
         },
         {
           "title": "Интеграция API",
-          "url": "/docs/check/api.md"
+          "url": "/docs/check/api.md",
+          "key": 48
         },
         {
           "title": "Стиль кода",
-          "url": "/docs/check/source.md"
+          "url": "/docs/check/source.md",
+          "key": 49
         }
       ]
     },
