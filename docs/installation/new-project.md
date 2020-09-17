@@ -2,10 +2,11 @@
 
 ## Создание
 
-Проект создается форком или клонированием репозитория **[react-skeleton](https://github.com/ylabio/react-skeleton.git)**, чтобы в дальнейшем свободно модифицировать код под проект. 
-В случае клонирования, обычно, требуется удалить remote-url на react-skeleton и создать свой новый внешний репозиторий и уже на него добавить remote-url в git.
+Проект создается форком или клонированием репозитория **[react-skeleton](https://github.com/ylabio/react-skeleton.git)** 
+для дальнейшего свободно модифицировать кода под особености проекта. 
+В случае клонирования потребуется добавить `remote-url` на новый внешний репозиторий, например в gitlab.
 
-1. Клонировать react-skeleton: 
+1. Клонировать [react-skeleton](https://github.com/ylabio/react-skeleton.git): 
     ```
     git clone https://github.com/ylabio/react-skeleton.git
     git checkout master
@@ -31,7 +32,7 @@
 npm install
 ```
 
-Все зависимые пакеты будут загружены в директорию node_modules. В последующем под задачи проекта можно добавлять дополнительные пакеты командой 
+Все зависимые пакеты будут загружены в директорию node_modules. Можно добавлять дополнительные пакеты командой 
 ```
 npm install --save <package-name>
 ```
@@ -43,7 +44,8 @@ npm install --save <package-name>
 npm start
 ```
 
-Приложение по умолчанию доступно по адресу `http://localhost:8031`. Порт меняется в файле конфигурации `src/config.js` и может отличаться от указанного.
+Приложение по умолчанию доступно по адресу `http://localhost:8031`. Порт меняется в файле конфигурации 
+[`src/config.js`](https://github.com/ylabio/react-skeleton/blob/master/src/config.js)) и может отличаться от указанного.
 
 *[`/src/config.js`](https://github.com/ylabio/react-skeleton/blob/master/src/config.js)*
 ```javascript
@@ -54,4 +56,4 @@ let config = {
  // ...
 }
 ```
-В режиме разработки используется локальный webpack http сервер для отслеживания изменения в коде и последующего “горячего” обновления приложения в браузера. 
+В режиме разработки используется локальный webpack http сервер для отслеживания изменения в коде и последующего "горячего" обновления приложения в браузера. 

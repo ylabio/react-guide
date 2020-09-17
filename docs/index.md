@@ -14,14 +14,13 @@
 Рекомендации (или требования) для самоконтроля или проведения ревью. Решения для достижения качественного кода.
 
 - [Репозиторий](/docs/check/git.md)
+- [Стиль кода](/docs/check/source.md)
 - [Вёрстка](/docs/check/html.md)
 - [Компоненты](/docs/check/component.md)
 - [Контейнеры](/docs/check/container.md)
 - [Роутинг](/docs/check/router.md)
-- [Логика приложения](/docs/check/logic.md)
 - [Состояние и экшены](/docs/check/state.md)
 - [Интеграция API](/docs/check/api.md)
-- [Стиль кода](/docs/check/source.md)
 
 ## Разработка
 
