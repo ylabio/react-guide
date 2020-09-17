@@ -34,26 +34,6 @@
     - Используется библиотека [`merge-change`](https://www.npmjs.com/package/merge-change) для слияния нового состояния со старым.
     - Файл редьюсера нужно реэкспортировать в [`@store/reducers.js`](https://github.com/ylabio/react-skeleton/blob/master/src/store/reducers.js)
 
-*Пример вызова экшенов в форме авторизации [`/src/app/login/index.js`](https://github.com/ylabio/react-skeleton/blob/master/src/app/login/index.js)*
-```js
-import formLogin from '@store/form-login/actions';
-
-function Login(props) {
-  //...
-  const callbacks = {
-    onChangeForm: useCallback(async data => {
-      // Экшен по установке данных из формы в общий стейт
-      await formLogin.change(data);
-    }, []),
-    onSubmitForm: useCallback(async data => {
-      // Отправка данных формы
-      await formLogin.submit(data);
-      //..
-    }, []),
-  };
-  // ...
-```
-
 *Экшены формы входа [`src\store\form-login\actions.js`](https://github.com/ylabio/react-skeleton/blob/master/src/store/form-login/actions.js)*
 ```js
 import store from '@store';
@@ -116,4 +96,24 @@ export default reducer(initState, {
     return mc.update(state, action.payload);
   },
 });
+```
+
+*Пример вызова экшенов в форме авторизации [`/src/app/login/index.js`](https://github.com/ylabio/react-skeleton/blob/master/src/app/login/index.js)*
+```js
+import formLogin from '@store/form-login/actions';
+
+function Login(props) {
+  //...
+  const callbacks = {
+    onChangeForm: useCallback(async data => {
+      // Экшен по установке данных из формы в общий стейт
+      await formLogin.change(data);
+    }, []),
+    onSubmitForm: useCallback(async data => {
+      // Отправка данных формы
+      await formLogin.submit(data);
+      //..
+    }, []),
+  };
+  // ...
 ```
