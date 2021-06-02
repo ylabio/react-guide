@@ -65,22 +65,9 @@ pm2 start process.json
 
 ## Алиасы путей
 
-В файле [`/package.json`](https://github.com/ylabio/react-skeleton/blob/master/package.json) кроме типовых свойств проекта прописаны алиасы на директории, чтобы импортировать их из любого файла через @ вместо указания относительных путей. Алиасы также поймет IDE WebStorm.
-
-*[`/package.json`](https://github.com/ylabio/react-skeleton/blob/master/package.json)*
-```
-"_moduleAliases": {
-    "@api": "./src/api/",
-    "@app": "./src/app/",
-    "@components": "./src/components/",
-    "@containers": "./src/containers/",
-    "@store": "./src/store/",
-    "@theme": "./src/theme",
-    "@utils": "./src/utils/"
-}
-```
+Вместо указания относительных путей можно применить алиас на src директорию.
 
 *Пример импорта через алиас*
 ```js
-import Button from '@components/button'; // вместо '../../components/button'
+import Button from '@src/components/button'; // вместо '../../../components/button'
 ```

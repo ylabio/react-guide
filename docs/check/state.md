@@ -2,7 +2,7 @@
 
 1. Используется библиотека [`redux`](https://redux.js.org).
     - Без применения redux-thunk и прочих оберток.
-    - Объект хранилища `store` доступен отовсюду через `import store form @store`.
+    - Объект хранилища `store` доступен отовсюду через `import store form @src/store`.
 
 2. Всё состояние приложения декомпозируется на модули. В модуле определяются экшены, начальное состояние и редьюсер по установке состояния.
 
@@ -32,12 +32,12 @@
     - Описываются через функцию-обертку, которой передаётся начальное состояние, типы экшенов и объект с кастомными редьюсерами. 
     - Обычно логика всех редьюсеров проста и идентична —  присвоить новый объект состояния. 
     - Используется библиотека [`merge-change`](https://www.npmjs.com/package/merge-change) для слияния нового состояния со старым.
-    - Файл редьюсера нужно реэкспортировать в [`@store/reducers.js`](https://github.com/ylabio/react-skeleton/blob/master/src/store/reducers.js)
+    - Файл редьюсера нужно реэкспортировать в [`@src/store/reducers.js`](https://github.com/ylabio/react-skeleton/blob/master/src/store/reducers.js)
 
 *Экшены формы входа [`src\store\form-login\actions.js`](https://github.com/ylabio/react-skeleton/blob/master/src/store/form-login/actions.js)*
 ```js
-import store from '@store';
-import * as api from '@api';
+import store from '@src/store';
+import * as api from '@src/api';
 import initState, { types } from './state.js';
 
 export default {
@@ -87,7 +87,7 @@ export default {
 
 *Редьюсер [`src\store\form-login\reducer.js`](https://github.com/ylabio/react-skeleton/blob/master/src/store/form-login/reducer.js)*
 ```js
-import reducer from '@utils/reducer';
+import reducer from '@src/utils/reducer';
 import mc from 'merge-change';
 import initState, { types } from './state.js';
 
@@ -100,7 +100,7 @@ export default reducer(initState, {
 
 *Пример вызова экшенов в форме авторизации [`/src/app/login/index.js`](https://github.com/ylabio/react-skeleton/blob/master/src/app/login/index.js)*
 ```js
-import formLogin from '@store/form-login/actions';
+import formLogin from '@src/store/form-login/actions';
 
 function Login(props) {
   //...

@@ -23,9 +23,9 @@ const html = renderToString(jsx);
 
 *[`/src/index.node.js`](https://github.com/ylabio/react-skeleton/blob/master/src/index.node.js)*
 ```js
-import api from '@api';
-import navigation from '@app/navigation';
-import store from '@store';
+import api from '@src/api';
+import navigation from '@src/app/navigation';
+import store from '@src/store';
 //..
 api.configure(config.api);
 navigation.configure({ ...config.navigation, initialEntries: [workerData.url] }); // with request url
@@ -41,7 +41,7 @@ store.configure();
 состояние пустое. Компоненты успеют вызвать действия загрузки данных, но они асинхронные, и рендер в строку не будет ожидать
 их выполнения. 
 
-Все инициализации в контейнерах должны выполняться в хуке `useInit()` (`@utils/hooks/use-init.js`). Он основан на стандартном `useEffect()`, но работает
+Все инициализации в контейнерах должны выполняться в хуке `useInit()` (`@src/utils/hooks/use-init.js`). Он основан на стандартном `useEffect()`, но работает
 и при серверном рендере. Более того, этот хук на сервере добавляет промис асинхронной функции в массив `global.SSR.initPromises[]`.
 Можно дождаться завершения всех промисов и выполнить рендер с уже полноценным состоянием и получить html с содержимым.
 
@@ -86,13 +86,13 @@ store.configure();
 
 Последняя задача — вставить рендер приложения в шаблон html документа, а также прописать в шаблоне скрипты, стили и метаданные.
 В качестве шаблона используется файла [`/src/index.html`](https://github.com/ylabio/react-skeleton/blob/master/src/index.html), в нём нет специальной разметки для шаблонизатора. Этот валидный
-html файл, который используется и для сборки фронтенд. Для вставки в него данных используется функция [`@utils/insert-text()`](https://github.com/ylabio/react-skeleton/blob/master/src/utils/insert-text.js) 
+html файл, который используется и для сборки фронтенд. Для вставки в него данных используется функция [`@src/utils/insert-text()`](https://github.com/ylabio/react-skeleton/blob/master/src/utils/insert-text.js) 
 для поиска тега и вставки строки перед или после него.
 
 *[`/src/index.node.js`](https://github.com/ylabio/react-skeleton/blob/master/src/index.node.js)*
 ```js
 import { parentPort, workerData } from 'worker_threads';
-import insertText from '@utils/insert-text';
+import insertText from '@src/utils/insert-text';
 import template from './index.html';
 
 //...

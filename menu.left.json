@@ -36,37 +36,37 @@
           "url": "/docs/develop/structure/index.md",
           "children": [
             {
-              "title": "app",
+              "title": "/app",
               "key": 511,
               "url": "/docs/develop/structure/app.md"
             },
             {
-              "title": "containers",
+              "title": "/containers",
               "key": 512,
               "url": "/docs/develop/structure/containers.md"
             },
             {
-              "title": "components",
+              "title": "/components",
               "key": 513,
               "url": "/docs/develop/structure/components.md"
             },
             {
-              "title": "store",
+              "title": "/store",
               "key": 514,
               "url": "/docs/develop/structure/store.md"
             },
             {
-              "title": "api",
+              "title": "/api",
               "key": 515,
               "url": "/docs/develop/structure/api.md"
             },
             {
-              "title": "utils",
+              "title": "/utils",
               "key": 516,
               "url": "/docs/develop/structure/utils.md"
             },
             {
-              "title": "themes",
+              "title": "/themes",
               "key": 517,
               "url": "/docs/develop/structure/themes.md"
             }
@@ -102,7 +102,7 @@
       ]
     },
     {
-      "title": "Чек-лист",
+      "title": "Рекомендации",
       "type": "group",
       "key": 4,
       "children": [

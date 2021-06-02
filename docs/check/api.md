@@ -17,8 +17,8 @@
 
 *[`/src/api/users/index.js`](https://github.com/ylabio/react-skeleton/blob/master/src/api/users/index.js)*
 ```js
-import params from '@utils/query-params';
-import Common from '@api/common';
+import params from '@src/utils/query-params';
+import Common from '@src/api/common';
 
 /**
  * API пользователей с наследованием CRUD методов и добавлением кастомных 
@@ -61,7 +61,7 @@ export default class Users extends Common {
 
 *Вызов API*
 ```js
-import * as api from '@api';
+import * as api from '@src/api';
 //...
 const response = await api.users.login(data);
 ```

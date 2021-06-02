@@ -14,7 +14,7 @@
   свой механизм навигации.
 
 7. Для программной навигации используется объект [`navigation`](https://github.com/ylabio/react-skeleton/blob/master/src/app/navigation.js) — это прокси-объект к *history api*.
-    - Везде где понадобится навигация — `import navigation from "@app/navigation"` .
+    - Везде где понадобится навигация — `import navigation from "@src/app/navigation"` .
     - Применяется вместо объекта `history`, который нужно доставать из контекста компонента.
     - Часто используемые переходы по маршрутам можно описать функциями в объекте `navigation`. Например: `.goLogin()` 
       для перехода к форме входа вместо `navigation.push('/login')`.
