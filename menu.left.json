@@ -42,32 +42,32 @@
             },
             {
               "title": "containers",
-              "key": 513,
+              "key": 512,
               "url": "/docs/develop/structure/containers.md"
             },
             {
               "title": "components",
-              "key": 514,
+              "key": 513,
               "url": "/docs/develop/structure/components.md"
             },
             {
               "title": "store",
-              "key": 515,
+              "key": 514,
               "url": "/docs/develop/structure/store.md"
             },
             {
               "title": "api",
-              "key": 516,
+              "key": 515,
               "url": "/docs/develop/structure/api.md"
             },
             {
               "title": "utils",
-              "key": 517,
+              "key": 516,
               "url": "/docs/develop/structure/utils.md"
             },
             {
               "title": "themes",
-              "key": 518,
+              "key": 517,
               "url": "/docs/develop/structure/themes.md"
             }
           ]
@@ -88,12 +88,12 @@
               "url": "/docs/develop/ssr/build.md"
             },
             {
-              "title": "Сервер",
+              "title": "Сервер для SSR",
               "key": 523,
               "url": "/docs/develop/ssr/server.md"
             },
             {
-              "title": "Рендер",
+              "title": "Логика рендера",
               "key": 524,
               "url": "/docs/develop/ssr/render.md"
             }
