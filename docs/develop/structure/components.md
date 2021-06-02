@@ -10,7 +10,7 @@
 ```
 ├──/components
     ├──/elements
-    |   └──/button
+    |   └──/button - компонент кнопки
     |       ├──index.js
     |       └──style.less
     ├──/layouts

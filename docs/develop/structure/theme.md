@@ -3,9 +3,9 @@
 Общие ресурсы для стилизации компонент. Шрифты, css, картинки...
 
 ```
-├──/theme — общие файлы стилей
-    ├── functions.less
-    ├── style.less 
-    ├── variables.less 
+├──/theme
+    ├── functions.less - less функции
+    ├── style.less - общие стили, обычно reset
+    ├── variables.less - less переменные, напрмиер палитра цветов
     └── ...
 ```
