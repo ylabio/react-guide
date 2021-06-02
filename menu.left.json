@@ -33,16 +33,11 @@
         {
           "title": "Структура проекта",
           "key": 51,
-          "url": "/docs/develop/structure.md",
+          "url": "/docs/develop/index.md",
           "children": [
             {
               "title": "app",
               "key": 511,
-              "url": "/docs/develop/structure/app.md"
-            },
-            {
-              "title": "app",
-              "key": 512,
               "url": "/docs/develop/structure/app.md"
             },
             {
