@@ -5,7 +5,7 @@
 ```
 ├──/theme
     ├── functions.less - less функции
-    ├── style.less - общие стили, обычно reset
-    ├── variables.less - less переменные, напрмиер палитра цветов
+    ├── style.less - общие стили, обычно css-reset
+    ├── variables.less - less переменные, например палитра цветов
     └── ...
 ```
