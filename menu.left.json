@@ -26,6 +26,87 @@
       ]
     },
     {
+      "title": "Архитектура",
+      "type": "group",
+      "key": 5,
+      "children": [
+        {
+          "title": "Структура проекта",
+          "key": 51,
+          "url": "/docs/develop/structure.md",
+          "children": [
+            {
+              "title": "app",
+              "key": 511,
+              "url": "/docs/develop/structure/app.md"
+            },
+            {
+              "title": "app",
+              "key": 512,
+              "url": "/docs/develop/structure/app.md"
+            },
+            {
+              "title": "containers",
+              "key": 513,
+              "url": "/docs/develop/structure/containers.md"
+            },
+            {
+              "title": "components",
+              "key": 514,
+              "url": "/docs/develop/structure/components.md"
+            },
+            {
+              "title": "store",
+              "key": 515,
+              "url": "/docs/develop/structure/store.md"
+            },
+            {
+              "title": "api",
+              "key": 516,
+              "url": "/docs/develop/structure/api.md"
+            },
+            {
+              "title": "utils",
+              "key": 517,
+              "url": "/docs/develop/structure/utils.md"
+            },
+            {
+              "title": "themes",
+              "key": 518,
+              "url": "/docs/develop/structure/themes.md"
+            }
+          ]
+        },
+        {
+          "title": "Рендер на сервере — SSR",
+          "key": 52,
+          "url": "/docs/develop/ssr/index.md",
+          "children": [
+            {
+              "title": "Требования",
+              "key": 521,
+              "url": "/docs/develop/ssr/requirements.md"
+            },
+            {
+              "title": "Сборка и запуск",
+              "key": 522,
+              "url": "/docs/develop/ssr/build.md"
+            },
+            {
+              "title": "Сервер",
+              "key": 523,
+              "url": "/docs/develop/ssr/server.md"
+            },
+            {
+              "title": "Рендер",
+              "key": 524,
+              "url": "/docs/develop/ssr/render.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "title": "Чек-лист",
       "type": "group",
       "key": 4,
@@ -69,45 +150,6 @@
           "title": "Интеграция API",
           "url": "/docs/check/api.md",
           "key": 49
-        }
-      ]
-    },
-    {
-      "title": "Разработка",
-      "type": "group",
-      "key": 5,
-      "children": [
-        {
-          "title": "Структура проекта",
-          "key": 51,
-          "url": "/docs/develop/structure.md"
-        },
-        {
-          "title": "Рендер на сервере — SSR",
-          "key": 52,
-          "url": "/docs/develop/ssr/index.md",
-          "children": [
-            {
-              "title": "Требования",
-              "key": 521,
-              "url": "/docs/develop/ssr/requirements.md"
-            },
-            {
-              "title": "Сборка и запуск",
-              "key": 522,
-              "url": "/docs/develop/ssr/build.md"
-            },
-            {
-              "title": "Сервер",
-              "key": 523,
-              "url": "/docs/develop/ssr/server.md"
-            },
-            {
-              "title": "Рендер",
-              "key": 524,
-              "url": "/docs/develop/ssr/render.md"
-            }
-          ]
         }
       ]
     }
